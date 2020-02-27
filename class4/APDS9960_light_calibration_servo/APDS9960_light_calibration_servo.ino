@@ -84,10 +84,7 @@ void loop() {
 
 void calibrateSensor() {
 
-  // set sensorMax to and sensorMin
-//  APDS.readColor(r, g, b, a);
-
-  
+  // set sensorMax to and sensorMin  
   // if any value is bigger than the sensorMax, save the value to sensorMax
   if (a > sensorMax) {
     sensorMax = a;
