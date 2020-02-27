@@ -2,16 +2,13 @@
 Class 4 Exercise for Intangible Interaction at ITP by Yeseul Song
 1. Callibrate ambient light sensor value
 2. Read values and change the angle of a servo
-
 Wiring (Arduino IoT33):
 D3 - Servo output pin
 D9 - 220k - LED
 ADPS9960 SDA - A4, SCL - A5
-
 This sketch uses a calibration technique that was introduced on this page: 
 (created by David A Mellis and modified by Tom Igoe)
 https://www.arduino.cc/en/tutorial/calibration
-
 */
 
 #include <Arduino_APDS9960.h>
@@ -49,6 +46,8 @@ void setup() {
 void loop() {
 
   // read rgb and ambient light value from APDS9960  
+  while(!APDS.colorAvailable());
+  
   APDS.readColor(r, g, b, a);
 
   // for the first 10 seconds, 
@@ -86,6 +85,8 @@ void loop() {
 void calibrateSensor() {
 
   // set sensorMax to and sensorMin
+//  APDS.readColor(r, g, b, a);
+
   
   // if any value is bigger than the sensorMax, save the value to sensorMax
   if (a > sensorMax) {
@@ -95,7 +96,7 @@ void calibrateSensor() {
   if (a < sensorMin) {
     sensorMin = a;
   }
-  
+
   Serial.print("min:");
   Serial.print(sensorMin);
   Serial.print(" max:");
