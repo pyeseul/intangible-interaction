@@ -3,7 +3,7 @@
 Intangible Interaction Spring 2020
 
 The sketch uses PoseNet to decide if you sit down (by measuring distances between your hip and knee)
-and if so it communicates over serial to turn on a physical digital output (e.g., LED)
+and if so it communicates over serial to turn on a physical digital output (e.g., LED) on Arduino
 
 See the end for the Arduino side code.
 Use with p5.serialport 
@@ -84,9 +84,7 @@ function serialError(err) {
  
 // get the list of ports:
 function printList(portList) {
- // portList is an array of serial port names
  for (var i = 0; i < portList.length; i++) {
- // Display the list the console:
  console.log(i + " " + portList[i]);
  }
 }
