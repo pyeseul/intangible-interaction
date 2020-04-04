@@ -8,9 +8,6 @@ The sketch uses PoseNet to decide if you do a squat (by measuring distances betw
 and counts the number of squats. 
 When it senses your 5th squat, the sketch sends 1 to Arduino over serial to turn on a physical digital output (e.g., LED) 
 
-PoseNet https://ml5js.org/reference/api-PoseNet/
-p5.serialport https://github.com/p5-serial/p5.serialport 
-
 */
 
 let video;
