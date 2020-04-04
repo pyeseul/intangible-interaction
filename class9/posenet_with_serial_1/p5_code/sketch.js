@@ -4,13 +4,10 @@ Intangible Interaction Spring 2020
 
 Squat Motivator: When you do 5 squats, an LED (or any physical digital output) turns on
 
-The sketch uses PoseNet to decide if you do a squat (by measuring distances between your hip and knee), counts the number of squats. When it senses your 5th sends 1 to Arduino over serial to turn on a physical digital output (e.g., LED)
-
-See the end for the Arduino side code.
-Use with p5.serialport 
+The sketch uses PoseNet to decide if you do a squat (by measuring distances between your hip and knee) and counts the number of squats. 
+When it senses your 5th sends 1 to Arduino over serial to turn on a physical digital output (e.g., LED)
 
 PoseNet https://ml5js.org/reference/api-PoseNet/
-p5.serialport https://github.com/p5-serial/p5.serialport 
 
 */
 
@@ -99,27 +96,3 @@ function printList(portList) {
  console.log(i + " " + portList[i]);
  }
 }
-
-
-/*
-byte fromP5;
-
-void setup() {
-  Serial.begin(9600);
-  pinMode(4, OUTPUT);
-  
-}
-void loop() {
-  if(Serial.available()){
-    fromP5 = Serial.read();    
-  } 
-  if (fromP5 == 1) {
-    digitalWrite(4, HIGH);
-  
-  } else {
-    digitalWrite(4, LOW);
-  
-  }
-}
-
-*/
