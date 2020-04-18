@@ -4,7 +4,7 @@ Class example for Intangible Interaction at ITP
 
 This sketch gets the most recent weather and pollution data of a selected city 
 from api.airvisual.com
-and parse the response to get the aqius (air quality index US) 
+and parses the response to gets the aqius (air quality index US) 
 to illuminated different colors of LED that indicate the air quality
 
 Wiring (Arduino IoT33):
@@ -16,7 +16,7 @@ D7 - 220k - Red LED
 
 #include <ArduinoHttpClient.h>
 #include <WiFiNINA.h>
-#include "arduino_secrets.h" // to keep sensitive information on a sepearate file 
+#include "arduino_secrets.h"
 
 char ssid[] = SECRET_SSID;
 char pass[] = SECRET_PASS;
@@ -24,9 +24,9 @@ char pass[] = SECRET_PASS;
 const char serverAddress[] = "api.airvisual.com";  // server address
 int port = 443;
 String API = "ba1ee32e-89c8-45ba-8ae3-1e389ff7de71";
-String cityName = "Seoul";
-String stateName = "Seoul";
-String countryName = "South%20Korea";
+String cityName = "Buffalo";
+String stateName = "New%20York";
+String countryName = "USA";
 
 WiFiSSLClient wifi;
 HttpClient client = HttpClient(wifi, serverAddress, port);
@@ -79,6 +79,7 @@ void getData() {
   // send the GET request
   Serial.println("making GET request");
   Serial.println(path);   
+  
   client.get(path);
 
   // read the status code and body of the response
@@ -95,8 +96,6 @@ void getData() {
   int valueStart = response.indexOf(":", labelStart);
   int valueEnd = response.indexOf(",", labelStart);
   String valueS = response.substring(valueStart + 1, valueEnd);
-  int valueN = valueS.toInt();
-  Serial.println(valueN);
 
   // convert the string to int
   aqi_city = valueS.toInt();  
