@@ -3,6 +3,7 @@ Class 2 exercise for Intangible Interaciton at ITP by Yeseul Song
 Wiring:
 Digital Pin 4 - 220k resistor - LED
 Digital Pin 2 - the signal pin of a beam breaker receiver
+Power the emitter with 5V (Vin pin) instead of 3.3V for the maximum range
 */
 
 int ledPin = 4;
@@ -13,7 +14,7 @@ void setup() {
 
   // define pin modes
   pinMode(receiverPin, INPUT_PULLUP);
-  pinMode(outputPin, OUTPUT);
+  pinMode(ledPin, OUTPUT);
 
   // we're using interrupts to read the receiver's status
   attachInterrupt((digitalPinToInterrupt(receiverPin)), sendToSerial, CHANGE);
@@ -25,7 +26,7 @@ void setup() {
 void loop() {
 
   // turn on and off LED as the value of "reading" changes
-  digitalWrite(outputPin, reading);
+  digitalWrite(ledPin, reading);
 }
   
 // when the receiver's status changes, turn on/off LED and send reading's value to serial as binary
