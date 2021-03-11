@@ -1,5 +1,5 @@
 /*
-Class 4 Exercise for Intangible Interaction at ITP by Yeseul Song
+Class 6 Exercise for Intangible Interaction at ITP by Yeseul Song
 1. Callibrate ambient light sensor value
 2. Read values and change the angle of a servo
 Wiring (Arduino IoT33):
