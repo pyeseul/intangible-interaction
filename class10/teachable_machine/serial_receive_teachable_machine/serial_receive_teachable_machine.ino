@@ -1,3 +1,6 @@
+// intangible interaction 2021
+// the code receives serial inputs and triggeres different LEDs. 
+
 byte fromP5;
 
 void setup() {
