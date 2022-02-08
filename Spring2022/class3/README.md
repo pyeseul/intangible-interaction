@@ -13,8 +13,10 @@ As output, it changes the brightness of 2 LEDs, one with the raw reading and the
 This does the same thing as the first example (proximity_average), but it uses an averaging library ([AverageValue](https://www.arduino.cc/reference/en/libraries/averagevalue/)).
 
 #### callib_led
-
+It read brightness values from a APDS9960 sensor and calibrate the value range for the first 10 seconds and map that to the full range of the output.
+After 10 seconds, it controls the LED with the calibration setting.
 
 #### callib_servo
-description
+It read brightness values from a APDS9960 sensor and calibrate the value range for the first 10 seconds and map that to the full range of the output.
+After 10 seconds, it controls the servo with the calibration setting.
 
