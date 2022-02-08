@@ -1,4 +1,4 @@
-There are 4 Arduino examples for APDS9960 sensor in this folder.
+Hi class! There are 4 Arduino examples for APDS9960 sensor in this folder.
 [Arduino APDS9960 library](https://www.arduino.cc/en/Reference/ArduinoAPDS9960) was used in all of the examples.
 See the top of each code for circuit instructions.
 
